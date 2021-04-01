@@ -1,13 +1,124 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.star {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin: 2px;
+  float: left;
+  background-color: #c0c0c0;
+  clip-path: polygon(
+    50% 0%,
+    63% 38%,
+    100% 38%,
+    69% 59%,
+    82% 100%,
+    50% 75%,
+    18% 100%,
+    31% 59%,
+    0% 38%,
+    37% 38%
+  );
+}
+.star.filled {
+  background-color: red;
+}
+.star.half {
+  background-image: linear-gradient(-90deg, #c0c0c0 50%, red 50%);
+}
+
+.star.half25 {
+  background-image: linear-gradient(-90deg, #c0c0c0 58%, red 50%);
+}
+.star.half75 {
+  background-image: linear-gradient(-90deg, #c0c0c0 40%, red -10%);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "h h h h h h h h h h h h"
+    "s s s s s s s s s s s s"
+    "m m m m m m m m m m m m";
+}
+
+.header {
+  grid-area: h;
+  text-align: center;
+}
+
+.search {
+  grid-area: s;
+}
+
+.main {
+  grid-area: m;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 2rem;
+}
+
+.noodle-list-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+}
+
+.card {
+  padding: 0.5rem;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+.card > img {
+  border-radius: 10px;
+}
+.detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  gap: 1rem;
+}
+
+.detail-container > .image {
+  height: 25%;
+  width: 25%;
+}
+
+.detail-container > .info {
+  align-self: flex-start;
+}
+
+.back {
+  text-align: center;
+  text-decoration: none;
+  padding: 1rem;
+  background-color: black;
+  width: 10%;
+  margin: 5% auto;
+  border-radius: 10px;
+  color: white;
+}
+.back > a {
+  text-decoration: none;
+  color: white;
 }
